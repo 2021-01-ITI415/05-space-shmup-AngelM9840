@@ -15,7 +15,8 @@ public enum WeaponType
     phaser, // [NI] Shots that move in waves
     missile, // [NI] Homing missiles
     laser, // [NI] Damage over time
-    shield // Raise shieldLevel
+    shield, // Raise shieldLevel
+    barrage // multiple front facing blasters
 }
 
 /// <summary>
@@ -122,6 +123,7 @@ public class Weapon : MonoBehaviour {
                 p.rigid.velocity = vel;
                 break;
 
+
             case WeaponType.spread:
                 p = MakeProjectile(); // Make middle Projectile
                 p.rigid.velocity = vel;
@@ -132,6 +134,10 @@ public class Weapon : MonoBehaviour {
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
                 break;
+
+
+
+     
         }
     }
 
