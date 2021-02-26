@@ -16,7 +16,7 @@ public enum WeaponType
     missile, // [NI] Homing missiles
     laser, // [NI] Damage over time
     shield, // Raise shieldLevel
-    barrage // multiple front facing blasters
+    blasterslow // Additional blaster meant to behave differently than default
 }
 
 /// <summary>
@@ -123,7 +123,14 @@ public class Weapon : MonoBehaviour {
                 p.rigid.velocity = vel;
                 break;
 
+            //Additional blaster meant to behave differenly than default through inspector
+            //prevents weapon from firing 
+            //case WeaponType.blaster2:
+                //p = MakeProjectile();
+                //p.rigid.velocity = vel;
+                //break;
 
+            //added more blasters
             case WeaponType.spread:
                 p = MakeProjectile(); // Make middle Projectile
                 p.rigid.velocity = vel;
